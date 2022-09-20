@@ -1,0 +1,19 @@
+.modal-window .animated{
+    visibility: visible;
+    opacity: 0;
+}
+
+.modal-window {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -30%);
+    transition-delay: 0.2s;
+}
+
+.modal-window .show{
+    opacity: 1;
+    visibility: visible;
+}
+.modal-window img{
+    visibility: visible;
+}
