@@ -6,7 +6,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(254, 176, 79);
+    background-color: rgb(251, 184, 41);
     font-family: 'Nunito', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -23,7 +23,7 @@ li {
     transition: all 0.1s ease-in-out;
 }
     li:hover {
-      border: 2px solid rgba(218, 10, 10, 0.3);
+      border: 2px solid rgba(223, 148, 62, 0.3);
     }
 h1{
     margin-bottom: 10px;
@@ -42,12 +42,16 @@ h1{
 .result button{
     border: none;
     border-radius: 20px;
-    background-color: darkorange;
+    background: linear-gradient(90deg, rgba(18, 231, 48, 1) 0%, rgba(0, 212, 255, 1) 100%);
     padding: 7px 20px;
     margin-top: 20px;
     font-size: 20px;
     color: #fff;
+    cursor: pointer;
 }
+    .result button:hover{
+        border: 2px solid rgba(0, 0, 0, 0.4);
+    }
 .progress{
     height: 10px;
     border-radius: 30px;

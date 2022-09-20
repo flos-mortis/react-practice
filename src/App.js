@@ -19,12 +19,14 @@ const questions = [
     },
 ]
 
-function Result(){
+function Result({correct}){
     return(
         <div className="result">
             <img src="https://placepic.ru/wp-content/uploads/2018/12/SHmXxpEHE4Q.jpg" width={'70%'}></img>
-            <h2>Вы отгадали 2 ответа из 5</h2>
-            <button>Играть снова</button>
+            <h2>Вы отгадали {correct} ответа из {questions.length}</h2>
+            <a href="/">
+                <button>Играть снова</button>
+            </a>
         </div>
     )
 
@@ -53,19 +55,25 @@ function Game({question, onClickVariant, step}){
 
 function App(){
     const[step, setStep] = useState(0)
+    const[correct, setCorrect] = useState(0)
     const question = questions[step]
 
     const onClickVariant = (index) => {
-        console.log(step, index);
         setStep(step + 1)
+
+        if(index === question.correct){
+            setCorrect(correct + 1)
+        }
     }
 
     return (
         <div className="App">
-            <Game step={step} question={question} onClickVariant={onClickVariant}/>
+            {
+                step !== questions.length ? (<Game step={step} question={question} onClickVariant={onClickVariant}/>
+                ) : (<Result correct={correct}/>)
+            }
         </div>
     )
-
 }
 
 export default App;
