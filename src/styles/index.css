@@ -19,20 +19,20 @@ li {
 }
 .App{
     width: 400px;
-    height: 600px;
+    height: auto;
     margin: 50px auto;
     background-color: #fff;
     border-radius: 30px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     padding: 40px;
 }
-input {
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    padding: 15px;
-    border-radius: 15px;
-    width: 100%;
-    font-size: 16px;
-    padding-left: 50px;
+.search svg {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 17px;
+    left: 20px;
+    opacity: 0.3;
 }
 .users-list {
     list-style: none;
@@ -45,4 +45,16 @@ input {
 .skeleton-list {
     height: calc(100% - 130px);
     margin-top: 30px;
+}
+.search {
+    position: relative;
+}
+
+.search input {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 15px;
+    border-radius: 15px;
+    width: 100%;
+    font-size: 16px;
+    padding-left: 50px;
 }
