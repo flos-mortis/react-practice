@@ -2,7 +2,7 @@ import React from "react";
 import { Skeleton } from "./Skeleton";
 import { User } from "./User";
 
-export const Users = ({items, isLoading, onChangeSearchValue, searchValue}) => {
+export const Users = ({items, isLoading, onChangeSearchValue, searchValue, invites, onClickInvite}) => {
     return(
       <>
         <div className="search">
@@ -26,7 +26,12 @@ export const Users = ({items, isLoading, onChangeSearchValue, searchValue}) => {
                         const fullName = (obj.first_name + obj.last_name).toLowerCase();
                             return fullName.includes(searchValue.toLowerCase()) || obj.email.toLowerCase().includes(searchValue.toLowerCase())
                     }).map(obj  => (
-                        <User key={obj.id} {...obj}/>
+                        <User 
+                            key={obj.id} 
+                            {...obj}
+                            isInvited = {invites.includes(obj.id)}
+                            onClickInvite={onClickInvite}
+                        />
                     ))
                 }
             </ul>
@@ -35,4 +40,5 @@ export const Users = ({items, isLoading, onChangeSearchValue, searchValue}) => {
         <button className="send-invite">Отправить приглашения</button>
       </>
     )
+    
   }
